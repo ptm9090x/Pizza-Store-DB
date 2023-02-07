@@ -1,0 +1,13 @@
+SELECT 
+item_de.item_nam,
+item_de.item_price,
+item_de.item_categ,
+ord.order_id,
+ord.quantity,
+ord.created_at as order_time,
+deliv.deliver_addr1,
+deliv.deliver_addr2,
+deliv.deliver_city,
+ord.delivery FROM orders ord
+LEFT JOIN delivery_addr deliv ON ord.addr_id= deliv.addr_id
+LEFT JOIN item_details item_de ON ord.item_id = item_de.item_id;
