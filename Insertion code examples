@@ -1,0 +1,92 @@
+#Basic sample insertion used to input information to tables 
+INSERT INTO orders(row_id,created_at,order_id,quantity,delivery,cust_id,addr_id,item_id)
+VALUES
+('1',date/time,'order_id' etc)
+
+
+#Other examples note the diffrence in syntax. Syntax had to be changed to postgres syntax using find and replace (postgres is in the format above)
+
+---------------------------
+INSERT INTO `rota` VALUES (1, 'ro0001', '2022-08-10', 'sh0005', 'st0001');
+INSERT INTO `rota` VALUES (2, 'ro0001', '2022-08-10', 'sh0005', 'st0002');
+INSERT INTO `rota` VALUES (3, 'ro0001', '2022-08-10', 'sh0005', 'st0009');
+INSERT INTO `rota` VALUES (4, 'ro0001', '2022-08-10', 'sh0005', 'st0010');
+INSERT INTO `rota` VALUES (5, 'ro0001', '2022-08-10', 'sh0006', 'st0001');
+INSERT INTO `rota` VALUES (6, 'ro0001', '2022-08-10', 'sh0006', 'st0002');
+INSERT INTO `rota` VALUES (7, 'ro0001', '2022-08-10', 'sh0006', 'st0009');
+INSERT INTO `rota` VALUES (8, 'ro0001', '2022-08-10', 'sh0006', 'st0010');
+INSERT INTO `rota` VALUES (9, 'ro0002', '2022-08-11', 'sh0007', 'st0001');
+INSERT INTO `rota` VALUES (10, 'ro0002', '2022-08-11', 'sh0007', 'st0002');
+INSERT INTO `rota` VALUES (11, 'ro0002', '2022-08-11', 'sh0007', 'st0009');
+INSERT INTO `rota` VALUES (12, 'ro0002', '2022-08-11', 'sh0007', 'st0010');
+INSERT INTO `rota` VALUES (13, 'ro0002', '2022-08-11', 'sh0008', 'st0001');
+INSERT INTO `rota` VALUES (14, 'ro0002', '2022-08-11', 'sh0008', 'st0002');
+INSERT INTO `rota` VALUES (15, 'ro0002', '2022-08-11', 'sh0008', 'st0009');
+INSERT INTO `rota` VALUES (16, 'ro0002', '2022-08-11', 'sh0008', 'st0010');
+INSERT INTO `rota` VALUES (17, 'ro0003', '2022-08-12', 'sh0009', 'st0001');
+INSERT INTO `rota` VALUES (18, 'ro0003', '2022-08-12', 'sh0009', 'st0002');
+INSERT INTO `rota` VALUES (19, 'ro0003', '2022-08-12', 'sh0009', 'st0009');
+INSERT INTO `rota` VALUES (20, 'ro0003', '2022-08-12', 'sh0009', 'st0010');
+INSERT INTO `rota` VALUES (21, 'ro0003', '2022-08-12', 'sh0010', 'st0001');
+INSERT INTO `rota` VALUES (22, 'ro0003', '2022-08-12', 'sh0010', 'st0002');
+INSERT INTO `rota` VALUES (23, 'ro0003', '2022-08-12', 'sh0010', 'st0009');
+INSERT INTO `rota` VALUES (24, 'ro0003', '2022-08-12', 'sh0010', 'st0010');
+INSERT INTO `rota` VALUES (25, 'ro0004', '2022-08-13', 'sh0011', 'st0003');
+INSERT INTO `rota` VALUES (26, 'ro0004', '2022-08-13', 'sh0011', 'st0004');
+INSERT INTO `rota` VALUES (27, 'ro0004', '2022-08-13', 'sh0011', 'st0011');
+INSERT INTO `rota` VALUES (28, 'ro0004', '2022-08-13', 'sh0011', 'st0012');
+INSERT INTO `rota` VALUES (29, 'ro0004', '2022-08-13', 'sh0012', 'st0003');
+INSERT INTO `rota` VALUES (30, 'ro0004', '2022-08-13', 'sh0012', 'st0004');
+INSERT INTO `rota` VALUES (31, 'ro0004', '2022-08-13', 'sh0012', 'st0011');
+INSERT INTO `rota` VALUES (32, 'ro0004', '2022-08-13', 'sh0012', 'st0012');
+INSERT INTO `rota` VALUES (33, 'ro0005', '2022-08-14', 'sh0013', 'st0003');
+INSERT INTO `rota` VALUES (34, 'ro0005', '2022-08-14', 'sh0013', 'st0004');
+INSERT INTO `rota` VALUES (35, 'ro0005', '2022-08-14', 'sh0013', 'st0011');
+INSERT INTO `rota` VALUES (36, 'ro0005', '2022-08-14', 'sh0013', 'st0012');
+INSERT INTO `rota` VALUES (37, 'ro0005', '2022-08-14', 'sh0014', 'st0003');
+INSERT INTO `rota` VALUES (38, 'ro0005', '2022-08-14', 'sh0014', 'st0004');
+INSERT INTO `rota` VALUES (39, 'ro0005', '2022-08-14', 'sh0014', 'st0011');
+INSERT INTO `rota` VALUES (40, 'ro0005', '2022-08-14', 'sh0014', 'st0012');
+COMMIT;
+
+
+-- ----------------------------
+-- Records of shift
+-- ----------------------------
+
+INSERT INTO `shift` VALUES ('sh0001', 'Monday', '10:30:00', '14:30:00');
+INSERT INTO `shift` VALUES ('sh0002', 'Monday', '18:30:00', '23:00:00');
+INSERT INTO `shift` VALUES ('sh0003', 'Tuesday', '10:30:00', '14:30:00');
+INSERT INTO `shift` VALUES ('sh0004', 'Tuesday', '18:30:00', '23:00:00');
+INSERT INTO `shift` VALUES ('sh0005', 'Wednesday', '10:30:00', '14:30:00');
+INSERT INTO `shift` VALUES ('sh0006', 'Wednesday', '18:30:00', '23:00:00');
+INSERT INTO `shift` VALUES ('sh0007', 'Thursday', '10:30:00', '14:30:00');
+INSERT INTO `shift` VALUES ('sh0008', 'Thursday', '18:30:00', '23:00:00');
+INSERT INTO `shift` VALUES ('sh0009', 'Friday', '10:30:00', '14:30:00');
+INSERT INTO `shift` VALUES ('sh0010', 'Friday', '18:30:00', '23:00:00');
+INSERT INTO `shift` VALUES ('sh0011', 'Saturday', '10:30:00', '14:30:00');
+INSERT INTO `shift` VALUES ('sh0012', 'Saturday', '18:30:00', '23:00:00');
+INSERT INTO `shift` VALUES ('sh0013', 'Sunday', '10:30:00', '14:30:00');
+INSERT INTO `shift` VALUES ('sh0014', 'Sunday', '18:30:00', '23:00:00');
+COMMIT;
+
+-- ----------------------------
+--
+INSERT INTO `staff` VALUES ('st0001', 'Mindy', 'Sloan', 'Chef', 17.25);
+INSERT INTO `staff` VALUES ('st0002', 'Luqman', 'Cantu', 'Head chef', 21.50);
+INSERT INTO `staff` VALUES ('st0003', 'Seren', 'Lindsey', 'Chef', 17.25);
+INSERT INTO `staff` VALUES ('st0004', 'Arran', 'Hodgson', 'Head chef', 21.50);
+INSERT INTO `staff` VALUES ('st0005', 'Talha', 'Portillo', 'Chef', 17.25);
+INSERT INTO `staff` VALUES ('st0006', 'Sana', 'Black', 'Head chef', 21.50);
+INSERT INTO `staff` VALUES ('st0007', 'Zachery', 'Robins', 'Chef', 17.25);
+INSERT INTO `staff` VALUES ('st0008', 'Faraz', 'Peck', 'Head chef', 21.50);
+INSERT INTO `staff` VALUES ('st0009', 'Lilly-Rose', 'Vaughn', 'Delivery rider', 14.50);
+INSERT INTO `staff` VALUES ('st0010', 'Desiree', 'Gardner', 'Delivery rider', 14.50);
+INSERT INTO `staff` VALUES ('st0011', 'Ivan', 'English', 'Delivery rider', 14.50);
+INSERT INTO `staff` VALUES ('st0012', 'Johnathon', 'Bradford', 'Delivery rider', 14.50);
+INSERT INTO `staff` VALUES ('st0013', 'Matilda', 'Mccarty', 'Delivery rider', 14.50);
+INSERT INTO `staff` VALUES ('st0014', 'Areeb', 'Vasquez', 'Delivery rider', 14.50);
+INSERT INTO `staff` VALUES ('st0015', 'Amiyah', 'Lambert', 'Delivery rider', 14.50);
+INSERT INTO `staff` VALUES ('st0016', 'Amrit', 'Greaves', 'Delivery rider', 14.50);
+COMMIT;
+
