@@ -1,4 +1,5 @@
 #Basic sample insertion used to input information to tables 
+
 INSERT INTO orders(row_id,created_at,order_id,quantity,delivery,cust_id,addr_id,item_id)
 VALUES
 ('1',date/time,'order_id' etc)
