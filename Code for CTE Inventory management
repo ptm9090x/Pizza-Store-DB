@@ -1,0 +1,45 @@
+WITH ingorder_info as (WITH ingredient_orderque  as
+(SELECT
+ord.item_id,
+item_de.sku,
+item_de.item_nam,
+ingr.ing_id,
+ingr.ing_name,
+ingr.ing_weight,
+ingr.ing_price,
+rec.quantity as recipe_quantity,
+sum (ord.quantity) as numoforder
+FROM orders ord 
+LEFT JOIN item_details item_de ON ord.item_id= item_de.item_id
+LEFT JOIN ingredient ingr ON ingr.ing_id = ingr.ing_id
+LEFT JOIN recipe rec ON item_de.sku = rec.recipe_id
+GROUP BY 
+ord.item_id,
+item_de.sku,
+item_de.item_nam,
+ingr.ing_id,
+ingr.ing_name,
+rec.quantity,
+ingr.ing_weight,
+ingr.ing_price) 
+
+SELECT 
+item_nam,
+sku,
+ing_price,
+ing_name,
+numoforder * recipe_quantity as orderedamountof_ing,
+ing_price/ing_weight as costper_ing,
+(numoforder * recipe_quantity) * (ing_price/ing_weight) as total_ing_cost
+ FROM 
+ ingredient_orderque
+GROUP BY 
+recipe_quantity,
+item_nam,
+numoforder,
+sku,
+ing_price,
+ing_weight,
+ing_name)
+
+SELECT * FROM ingorder_info;
