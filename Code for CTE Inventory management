@@ -27,7 +27,10 @@ SELECT
 item_nam,
 sku,
 ing_price,
+ing_id,
 ing_name,
+ing_weight,
+numoforder,
 numoforder * recipe_quantity as orderedamountof_ing,
 ing_price/ing_weight as costper_ing,
 (numoforder * recipe_quantity) * (ing_price/ing_weight) as total_ing_cost
@@ -36,10 +39,12 @@ ing_price/ing_weight as costper_ing,
 GROUP BY 
 recipe_quantity,
 item_nam,
-numoforder,
 sku,
 ing_price,
 ing_weight,
-ing_name)
+ing_id,
+numoforder,
+ing_name,
+item_id)
 
 SELECT * FROM ingorder_info;
