@@ -1,0 +1,105 @@
+
+CREATE TABLE "orders" (
+    "row_id" int   NOT NULL,
+    "created_at" timestamp   NOT NULL,
+    "order_id" varchar(10)   NOT NULL,
+    "quantity" int   NOT NULL,
+    "delivery" boolean   NOT NULL,
+    "cust_id" int   NOT NULL,
+    "addr_id" int   NOT NULL,
+    "item_id" varchar(10)   NOT NULL,
+    CONSTRAINT "pk_orders" PRIMARY KEY (
+        "row_id"
+     )
+);
+
+CREATE TABLE "delivery_addr" (
+    "addr_id" int   NOT NULL,
+    "deliver_addr1" varchar(200)   NOT NULL,
+    "deliver_addr2" varchar(200)   NULL,
+    "deliver_city" varchar(50)   NOT NULL,
+    "deliver_zipcode" varchar(5)   NOT NULL,
+    CONSTRAINT "pk_delivery_addr" PRIMARY KEY (
+        "addr_id"
+     )
+);
+
+CREATE TABLE "ingredient" (
+    "ing_name" varchar(200)   NOT NULL,
+    "ing_weight" int   NOT NULL,
+    "ing_meas" varchar(20   NOT NULL,
+    "ing_price" decimal(10,2)   NOT NULL,
+    "ing_id" varchar(10)   NOT NULL
+);
+
+CREATE TABLE "customers" (
+    "cust_id" int   NOT NULL,
+    "cust_firstnam" varchar(50)   NOT NULL,
+    "cust_lastnam" varchar(50)   NOT NULL,
+    CONSTRAINT "pk_customers" PRIMARY KEY (
+        "cust_id"
+     )
+);
+
+CREATE TABLE "item_details" (
+    "item_id" int   NOT NULL,
+    "sku" varchar(20)   NOT NULL,
+    "item_nam" varchar(100)   NOT NULL,
+    "item_categ" varchar(100)   NOT NULL,
+    "item_size" varchar(10)   NOT NULL,
+    "item_price" decimal(10,2)   NOT NULL,
+    CONSTRAINT "pk_item_details" PRIMARY KEY (
+        "item_id"
+     )
+);
+
+CREATE TABLE "recipe" (
+    "ing_id" varchar(10)   NOT NULL,
+    "recipe_id" varchar(20)   NOT NULL,
+    "row_id" int   NOT NULL,
+    "quantity" int   NOT NULL,
+    CONSTRAINT "pk_recipe" PRIMARY KEY (
+        "row_id"
+     )
+);
+
+CREATE TABLE "inventory" (
+    "inv_id" int   NOT NULL,
+    "item_id" varchar(10)   NOT NULL,
+    "quantity" int   NOT NULL,
+    CONSTRAINT "pk_inventory" PRIMARY KEY (
+        "inv_id"
+     )
+);
+
+CREATE TABLE "staff" (
+    "staff_id" varchar(20)   NOT NULL,
+    "firststaffname" varchar(50)   NOT NULL,
+    "firststafflast" varchar(50)   NOT NULL,
+    "staffposition" varchar(100)   NOT NULL,
+    "hourrate" decimal(3,2)   NOT NULL,
+    CONSTRAINT "pk_staff" PRIMARY KEY (
+        "staff_id"
+     )
+);
+
+CREATE TABLE "shift" (
+    "shift_id" varchar(10)   NOT NULL,
+    "day_ofweek" varchar(10)   NOT NULL,
+    "shiftstart" timestamp   NOT NULL,
+    "shiftend" timestamp   NOT NULL,
+    CONSTRAINT "pk_shift" PRIMARY KEY (
+        "shift_id"
+     )
+);
+
+CREATE TABLE "rota" (
+    "row_id" int   NOT NULL,
+    "rota_id" varchar(20)   NOT NULL,
+    "rotadate" timestamp   NOT NULL,
+    "shift_id" varchar(20)   NOT NULL,
+    "staff_id" varchar(20)   NOT NULL,
+    CONSTRAINT "pk_rota" PRIMARY KEY (
+        "row_id"
+     )
+);
