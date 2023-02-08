@@ -11,8 +11,8 @@ rec.quantity as recipe_quantity,
 sum (ord.quantity) as numoforder
 FROM orders ord 
 LEFT JOIN item_details item_de ON ord.item_id= item_de.item_id
-LEFT JOIN ingredient ingr ON ingr.ing_id = ingr.ing_id
 LEFT JOIN recipe rec ON item_de.sku = rec.recipe_id
+LEFT JOIN ingredient ingr ON ingr.ing_id = rec.ing_id
 GROUP BY 
 ord.item_id,
 item_de.sku,
@@ -48,3 +48,4 @@ ing_name,
 item_id)
 
 SELECT * FROM ingorder_info;
+
