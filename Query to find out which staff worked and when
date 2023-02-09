@@ -1,10 +1,12 @@
-SELECT 
+WIth shift_info as (SELECT 
 rot.rotadate,
 shi.day_ofweek,
- sta.firststaffname ,
+ sta.firststaffname,
  shi.shiftstart,
  shi.shiftend,
- ( shi.shiftend - shi.shiftstart) as shift_length
+ sta.hourrate,
+ sta.staffposition,
+ sum( shi.shiftend - shi.shiftstart) as shift_length
  FROM 
 rota rot
 LEFT JOIN shift shi ON rot.shift_id= shi.shift_id
@@ -14,4 +16,11 @@ rot.rotadate,
 shi.day_ofweek,
  sta.firststaffname ,
  shi.shiftstart,
- shi.shiftend;
+ shi.shiftend,
+ sta.staffposition,
+ sta.hourrate) 
+ 
+  SELECT firststaffname,staffposition,
+ (extract(hour from shift_length) + extract(minute from shift_length)/60.0) * hourrate as staffpay_cost
+ 
+ FROM shift_info Group by firststaffname, shift_length, hourrate,staffposition;
