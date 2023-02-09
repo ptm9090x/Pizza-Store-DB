@@ -1,0 +1,17 @@
+SELECT 
+rot.rotadate,
+shi.day_ofweek,
+ sta.firststaffname ,
+ shi.shiftstart,
+ shi.shiftend,
+ ( shi.shiftend - shi.shiftstart) as shift_length
+ FROM 
+rota rot
+LEFT JOIN shift shi ON rot.shift_id= shi.shift_id
+LEFT JOIN staff sta ON rot.staff_id= sta.staff_id
+GROUP by 
+rot.rotadate,
+shi.day_ofweek,
+ sta.firststaffname ,
+ shi.shiftstart,
+ shi.shiftend;
