@@ -1,4 +1,5 @@
-WITH ingorder_info as (WITH ingredient_orderque  as
+CREATE VIEW stock_1 as WITH ingorder_info as 
+(WITH ingredient_orderque  as
 (SELECT
 ord.item_id,
 item_de.sku,
@@ -48,4 +49,3 @@ ing_name,
 item_id)
 
 SELECT * FROM ingorder_info;
-
